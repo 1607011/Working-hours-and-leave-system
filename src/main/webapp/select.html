@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>選擇系統</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="resourses/css/_bootstrap.css">
+<link rel="stylesheet" type="text/css" href="resourses/css/interface.css">
+<style type="text/css">
+
+.form-select {
+	max-width: 280px;
+	margin: 60px auto 10px;
+}
+
+.form-select .form-select-heading {
+	text-align: center;
+	font-weight: bold;
+	text-shadow: 0px 1px 2px #111;
+	color: #fff;
+	margin-bottom: 30px;
+}
+
+.form-select .btn {
+	font-family: "微軟正黑體", "標楷體", "新細明體";
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+}
+
+.btn-warning .btn-info {
+	color: white;
+}
+
+#log {
+	top: 23%;
+	height: 370px;
+}
+
+.systemIcon {
+	position: relative;
+	bottom: 4px;
+}
+</style>
+<script src="resourses/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#work").on("click", function() {
+			window.location.replace("/IISI_Project/jsp/index.jsp");
+		});
+		$("#leave").on("click", function() {
+			window.location.replace("/IISI_Project/jsp/leave_index.jsp");
+		});
+
+		$("html, body").animate({
+			scrollTop : $('.form-select').offset().top
+		}, "show");
+	});
+</script>
+</head>
+<body>
+	<div class="navbar navbar-default navbar-static-top">
+
+		<img src="resourses/img/login_header.jpg" height="208" id="logo">
+
+	</div>
+	<div id="theme">
+		<img src="resourses/img/login_bg.jpg" height="570">
+		<div id="log" heigh="350">
+			<form class="form-select">
+				<h2 class="form-select-heading">
+					請選擇<br>您想要進入的系統
+				</h2>
+				<br>
+				<button id="work" class="btn btn-lg btn-warning btn-block" type="button"><img class="systemIcon" src="resourses/img/icon/work.png" width='30' height='30' /> 工時管理系統</button>
+				<br>
+				<button id="leave" class="btn btn-lg btn-info btn-block" type="button"><img class="systemIcon" src="resourses/img/icon/leave.png" width='30' height='30' /> 假單管理系統</button>
+			</form>
+		</div>
+	</div>
+	<footer class="white navbar-fixed-bottom">
+		<p>時達特股份有限公司 版權所有 Copyright © 2016 S.T.A.R.T All Rights Reserved .</p>
+	</footer>
+</body>
+</html>

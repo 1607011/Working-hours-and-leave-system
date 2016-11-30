@@ -1,0 +1,145 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="JDBC.JDBC_Oracle"%>
+<%@ page import="java.sql.ResultSet"%>
+<%!JDBC_Oracle db = new JDBC_Oracle();%>
+<%
+	if (session.getAttribute("userid") == null)
+		response.sendRedirect("/IISI_Project/login.html");
+	String userid = (session.getAttribute("userid") == null)
+			? "401170000"
+			: session.getAttribute("userid").toString();
+	String index = response.encodeURL("leave_index.jsp");
+	String index_work = response.encodeURL("index.jsp");
+	String job = userid.equals("401170000") ? "主管" : "員工";
+	String sex = db.getSex(Integer.parseInt(userid)) == 1 ? "male" : "female";
+%>
+<style type="text/css">
+.systemIcon {
+	position: relative;
+	bottom: 4px;
+}
+</style>
+<body>
+	<script type="text/javascript">
+		$(function() {
+			$("#logout").on("click", function() {
+				alertify.confirm("確定要登出本系統？", function(e) {
+					if (e) {
+						$.ajax({
+							url : "/IISI_Project/logout",
+							type : "get"
+						}).done(function() {
+							setTimeout(function() {
+								history.go(0);
+							}, 600);
+						}).fail(function() {
+							alertify.error('Fail');
+						});
+					}
+				});
+			});
+			$("#logout_a").on("click", function() {
+				$("#logout").click();
+			});
+		});
+	</script>
+	<div class="navbar navbar-default navbar-static-top" id="top">
+		<a href="<%=index_work%>"><img src="../resourses/img/header.jpg" alt="首頁"
+			name="header" width="1440" id="header" title="首頁" /></a>
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" id="menu" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span>
+					<span class="icon-bar"></span> <span class="icon-bar"></span>
+				</button>
+
+				<ul>
+					<li id="navleft"><a class="navbar-brand" href="<%=index%>"> 
+					<span id="topgp" aria-hidden="true">
+					<img class="systemIcon" src="../resourses/img/icon/leave.png" width='30' height='30' /><span
+								id="topl">假單</span></span></a></li>
+					<li id="navleft"><a class="navbar-brand" href="<%=index_work%>"> 
+					<span id="topgp" aria-hidden="true">
+					<img class="systemIcon" src="../resourses/img/icon/work.png" width='30' height='30' /><span
+								id="topl">工時</span></span>
+					</a></li>
+					<li id="navleft" class="dropdown"><a class="navbar-brand"> 
+					<span id="topgp" aria-hidden="true"><img class="systemIcon" src="../resourses/img/icon/<%=sex%>.png" width='32' height='32' />
+					<span id="topw">您好，<%=session.getAttribute("name")%></span></span></a>
+						<ul class="dropdown-menu" id="usermenu">
+							<li>
+
+								<div class="input-group" id="file">
+									<span class="input-group-addon"> <i
+										class="glyphicon glyphicon-info-sign"><span class="style"><%=job%>編號</span>
+									</i>
+									</span> <input type="text" value="<%=session.getAttribute("userid")%>"
+										class="textstyle" readonly>
+								</div>
+
+							</li>
+							<li role="separator" class="divider"></li>
+							<li>
+								<div class="input-group" id="file">
+									<span class="input-group-addon"> <i
+										class="glyphicon glyphicon-user"><span class="style"><%=job%>姓名</span> </i>
+									</span> <input type="text" value="<%=session.getAttribute("name")%>"
+										class="textstyle" readonly>
+								</div>
+							</li>
+							<li role="separator" class="divider"></li>
+							<li><button type="button" class="btn btn-default btn-md bn"
+									onClick="location.href='changepwd.jsp'">
+									<span class="glyphicon glyphicon-pencil txt">修改密碼</span>
+								</button>
+								<button type="button" class="btn btn-default btn-md bn" id="logout">
+									<span class="glyphicon glyphicon-log-out txt">登出</span>
+								</button></li>
+						</ul></li>
+					<li id="navleft"><a id="logout_a" class="navbar-brand"> 
+					<span id="topgp" aria-hidden="true"><img class="systemIcon" src="../resourses/img/icon/logout.png" width='30' height='30' />
+					<span id="topl">登出</span></span></a></li>
+				</ul>
+			</div>
+
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right" id="toptxt">
+					<%
+						if (!userid.equals("401170000")) {
+					%>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-expanded="false"
+						aria-haspopup="true">工時管理 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href=<%=response.encodeURL("workTime_new.jsp")%>>工時新增</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href=<%=response.encodeURL("workTime_modify.jsp")%>>工時修改<span
+									class="badge progress-bar-warning"><%=db.modifyTaskList(Integer.parseInt(userid)).size()%></span></a></li>
+						</ul></li>
+					<%
+						}
+					%>
+					<li><a href="search.jsp">工時查詢</a></li>
+					<%
+						if (userid.equals("401170000")) {
+					%>
+					<li><a href=<%=response.encodeURL("vertify.jsp")%>>工時審核<span
+							class="badge progress-bar-danger"><%=db.getAllCheckList().size()%></span></a></li>
+					<%
+						}
+					%>
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-expanded="false"
+						aria-haspopup="true">關於我 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">公司理念</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">公司成員</a></li>
+						</ul></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="wrapper">

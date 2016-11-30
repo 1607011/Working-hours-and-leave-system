@@ -1,0 +1,147 @@
+@CHARSET "UTF-8";
+
+
+body {
+	background-color: white;
+}
+
+footer {
+	color: #444444;
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #ffffcc;
+	height: 60px;
+	padding-top: 20px;
+	box-sizing: border-box;
+    position: absolute;
+    bottom: -90px;
+    width: 100%;
+}
+
+#calendar {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#content {
+	height: 100%;
+	/*box-shadow: 10px 10px 20px 1px gray;*/
+	margin: auto;
+	padding: 5px;
+	margin-top: 24px;
+	overflow: hidden;
+	position: relative;
+	background-color: #FFFFFF;
+	color: black;
+}
+
+.calendar table.month td.week-number {
+    font-weight: 700;
+    border-right: 1px black solid;
+    padding: 5px;
+}
+
+.alertify-message, .alertify-text {
+	color: black;
+}
+
+.calendar-header, .panel, .panel-default {
+	color: #483D8B;
+	background-color: #F5F5F5;
+	border: 2px #DEB887 outset;
+}
+
+.month-title {
+	color: brown;
+}
+
+.month-container {
+	padding: 5px;
+	/*border: 1px gray dashed;*/
+}
+
+.week {
+	color: black;
+}
+
+#datas_new #thead_new th input {
+	height: auto;
+	width: auto;
+	background-color: #003C9D;
+	border: none; 
+}
+
+#datas_new tbody .item input {
+	height: auto;
+	width: 180px;
+	text-align: center;
+	line-height: 30px;
+	background-color: #F5FFFA;
+	border: none;
+	cursor: url("../cursor/Handwriting.cur"), text;
+	text-overflow: ellipsis; 
+}
+
+.items input {
+	height: auto;
+	width: 180px;
+	text-align: center;
+	line-height: 30px;
+	background-color: #F5FFFA;
+	border: none;
+	text-overflow: ellipsis;
+}
+
+.modal-content {
+	/*top: 25%;*/
+	/*margin-top: 50px;*/
+	width: 1030px;
+	margin-left: -200px;
+}
+
+.table thead th, #datas_new #thead_new th input {
+	/*background-color: #CD853F;*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#CD853F), to(#D2691E));
+	font-weight: bolder;
+	/*background-color: white;*/
+}
+
+.table thead th span {
+	color: white;
+	position: relative;
+	top: 3px;
+	border: none;
+	font-size: 17px;
+}
+
+#typeValue, #input, #startMonth, #endMonth {
+	width: 10px;
+}
+
+
+.pos {
+	position: relative;
+	top: 2px;
+}
+
+#loading {
+	position: relative;
+	/*width: 50%;
+	hright: 50%;*/
+}
+
+.page {
+	color: black;
+	left: -20px;	
+}
+
+.control {
+	color: brown;
+	cursor: pointer;
+}
+
+#forward, #backward, #fast-backward {
+	width: 20px;
+	height: auto;
+}

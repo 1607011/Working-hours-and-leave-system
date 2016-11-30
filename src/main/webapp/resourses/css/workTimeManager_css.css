@@ -1,0 +1,371 @@
+@CHARSET "UTF-8";
+
+#manager_block, #manager_block1, .resultList, #leave_block1 {
+	background-color: #FFFFFF;
+	width: 1000px;
+	position: relative;
+	top: 0px;
+	margin: auto;
+	overflow: hidden;
+}
+
+hr {
+	width: 1000px;
+	position: relative;
+	margin-left: -380px;
+	overflow: hidden;
+}
+
+.resultList {
+	background-color: #FFFFFF;
+	width: 1000px;
+	position: relative;
+	top: 0px;
+	margin-left: -375px;
+	overflow: hidden;
+}
+
+ table td {
+     font-weight: bold;
+}
+
+#thead th {
+	text-align: center;
+	padding: 15px;
+	/*background-color: #191970;*/
+	background: -webkit-gradient(linear, left top, left bottom, from(#D2691E), to(#A0522D));
+	background: webkit-linear-gradient(top, #CD853F, #FFD700);
+	color: white;
+	font-size: 16px;
+	font-weight: bold; 
+	/*border: 1px solid;
+	border-radius: 15px;*/
+}
+
+#datas_modify tr {
+	/*border: 1px solid;*/
+	border-radius: 5px;
+}
+
+#datas_new td {
+	font-size: 16px;
+}
+
+#datas_total td {
+	height: 38px;
+	/*border: 1px #888888 solid;
+	border-radius: 3px;*/
+}
+
+td img {
+	position: relative;
+	/*top: 5px;*/
+	left: -2px;
+	width: 20px;
+	height: 20px;
+}
+
+.trash {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	margin-bottom: 2px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.access {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	margin-bottom: 2px;
+	width: 30px;
+	height: 30px;
+}
+
+#tbody td {
+	color: #666666;
+	font-weight: bold;
+}
+
+#tbody tr td, td a input, .btn, .btn span, .next span, .prev span, .year-title {
+	cursor: pointer;
+}
+
+td a:hover {
+	color: black;
+	font-weight: bold;
+}
+
+.result {
+	/*color: green;*/
+	text-weight: bolder;
+	text-align: center;
+	/*border: 1px #888888 solid;*/
+}
+
+#add {
+	position: relative;
+	top: 2px;
+	left: 73px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+
+.item {
+	color: black;
+	cursor: url("../cursor/Handwriting.cur"), pointer;
+	text-align: center;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.items {
+	color: black;
+	text-align: center;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.days, .times {
+	color: black;
+	width: 50px;
+	height: 35px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 5px;
+}
+
+#weektotal, .days, .week {
+	border: 2px outset #EEEEEE;	
+	background-color: white;
+}
+
+#send_block {
+	position: relative;
+	margin-top: 20px;
+}
+
+#new {
+	margin-top: 3px;
+	height: 45px;
+}
+
+.css_btn {
+	width: 80px;
+	height: 40px;
+	/*-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	box-shadow: inset 1px 1px 0px 0px #ffffff;*/
+}
+
+.css_btn span {
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	/*-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	box-shadow: inset 1px 1px 0px 0px #ffffff;*/
+}
+
+#goBack, #export {
+	height: 40px;
+	font-size: 16px;
+	color: black;
+	font-weight: bold;
+}
+
+#export {
+	color: black;
+	width: 200px;
+	position: relative;
+	left: 50%;
+	margin-left: -100px;
+}
+
+#export span {
+	color: white;
+	font-weight: bold;
+}
+
+.table {
+	table-layout: fixed;
+	border-collapse: separate;
+	border-spacing: 0 5px;
+}
+
+.table thead th {
+	padding: 15px;
+	/*background-color: #003C9D;*/
+	background-color: #CD853F;	
+	color: white;
+}
+
+#datas_new tbody td {
+	background-color: #F5FFFA;
+	/*background-color: white;*/
+}
+
+tr td:first-child, tr th:first-child {
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+tr td:last-child, tr th:last-child {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+th, td {
+	width: 40px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.out-border {
+	border: 2px #0066FF solid;
+}
+
+.new_row {
+	border: 3px outset;
+	border-radius: 5px;*/
+	line-height: 40px;
+}
+
+#tbody {
+	background-color: #F5FFFA;
+}
+
+#tbody td {
+	/*border: 1px #ADD8E6 outset;
+	border-radius: 6px;*/
+	line-height: 40px;
+}
+
+#tfoot {
+	color: black;
+	text-align: center;
+}
+
+#tfoot td {
+	line-height: 50px;
+}
+
+/*
+#thead th {
+	background-color: #003C9D;
+}*/
+
+.newTab input {
+	width: 200px;
+	background-color: #F5FFFA;
+	color: #666666;
+	text-align: center; 
+	border: none;
+}
+
+#user_id, #leave_date {
+	width: 100px;
+	background-color: #F5FFFA;
+	color: #666666;
+	text-align: center; 
+	border: none;
+}
+
+.selfData {
+	width: 130px;
+	font-weight: bold;
+	position: relative;
+	left: 56px;
+	background-color: #F5FFFA;
+	color: #666666;
+	font-size: 15px; 
+	border: none;
+}
+
+#name {
+	width: 130px;
+	position: relative;
+	left: 45px;
+	background-color: #F5FFFA; 
+	border: none;
+}
+
+#id {
+	width: 150px;
+	position: relative;
+	left: 30px;
+	background-color: #F5FFFA; 
+	border: none;
+}
+
+.datas {
+	text-align: center;
+}
+
+.form-control-static {
+	position: relative;
+	left: -10px;
+}
+
+#cause {
+	font-size: 15px;
+	color: #444444;
+	cursor: url("../cursor/Text Select.cur"), text;
+}
+
+
+.tablesorter-header-inner {
+	cursor: pointer;
+}
+
+.cursorMove {
+	cursor: url('../cursor/Move.cur'), move;
+}
+
+/*.checkboxFour {
+	width: 30px;
+	height: 30px;
+	background: #EEE;
+	border-radius: 100%;
+	position: relative;
+	-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+	cursor: url("../cursor/Link Select.cur"), pointer;
+}
+
+.checkboxFour label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 100px;
+	 
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	transition: all .5s ease;
+	cursor: url("../cursor/Link Select.cur"), pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+	background: #ddd;
+	 
+	-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+	cursor: url("../cursor/Link Select.cur"), pointer;
+}
+
+/**
+ * Create the checked state
+ */
+.checkboxFour input[type=checkbox]:checked + label {
+	background: #26ca28;
+	cursor: pointer;
+}*/

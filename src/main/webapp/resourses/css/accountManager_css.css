@@ -1,0 +1,164 @@
+@CHARSET "UTF-8";
+
+* {
+	font-family: Georgia, cursive, monospace;
+}
+
+#login_section h3 {
+	padding: 2px;
+	color: #88888;
+	text-align: center;
+	border: grey 5px outset;
+	border-radius: 5px;
+}
+
+#login_section span {
+	color: #666666;
+	font-weight: bold;
+}
+
+#id, #pwd {
+	border: black 4px double;
+}
+
+.border {
+	border: black 4px double;
+}
+
+#status {
+	position: relative;
+	left: 237px;
+	margin-top: -10px;
+	font-size: 15px;
+	color: red;
+}
+
+#btn {
+	border: grey 4px double;
+	cursor: pointer;
+}
+
+#modify_pwd {
+	font-size: 14px;
+	font-style: italic;
+	text-decoration: none;
+}
+
+#login_section {
+	position: relative;
+	top: 30px;
+	right: 120px;
+	padding: 10px;
+	width: 450px;
+	height: auto;
+	/*height: 270px;*/
+	border: gray 5px double;
+	border-radius: 15px;
+	box-shadow: 7px 7px 20px #888888;
+	float: right;
+}
+
+#captcha_block {
+	position: relative;
+	left: 20%;	
+}
+
+#captcha_block span {
+	position: relative;
+	left: 70px;
+}
+
+#modify, #clear {
+	position: relative;
+	left: 63px;
+}
+
+#code {
+	width: 52px;
+	height: 30px;
+	font-size: 13px;
+	font-weight: bolder;
+	color: 	#888888;
+	background-color: #DDDDDD;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	border: white 3px outset;
+	border-radius: 50%;
+}
+
+#re {
+	margin-top: 10px;
+	height: 30px;
+	font-size: 13px;
+	border: 1px solid;
+}
+
+#userImg {
+	margin: 3x;
+	margin-left: 10px;
+	margin-right: 25px;
+	/*background-color: #DDDDDD;*/
+	width: 200px;
+	height: 200px;
+	/*opacity: 0.9;
+	filter: alpha(opacity = 90);*/
+	float: left;
+}
+
+#login_form {
+	margin-top: 15px;
+}
+
+#login_form img {
+	margin-bottom: -2px;
+	margin-right: 4px;
+}
+
+/*按鈕美化*/
+.css_btn_class {
+	width: 75px;
+	height: 40px;
+	position: relative;
+	/*left: 30px;*/
+	margin-top: -5px;
+	margin-bottom: 5px;
+	font-size: 16px;
+	font-family: Arial;
+	font-weight: bold;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border: 2px double #dcdcdc;
+	padding: 9px 18px;
+	text-decoration: none;
+	background: -moz-linear-gradient(center top, #6e6e6e 25%, #303030 80%);
+	background: -ms-linear-gradient(top, #6e6e6e 25%, #303030 80%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6e6e6e',
+		endColorstr='#303030');
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(25%, #6e6e6e),
+		color-stop(80%, #303030));
+	background-color: #6e6e6e;
+	color: #FFFFFF;
+	display: inline-block;
+	/*text-shadow: 1px 1px 0px #ffffff;*/
+	-webkit-box-shadow: inset 1px 1px 0px 0px #ffffff;
+	-moz-box-shadow: inset 1px 1px 0px 0px #ffffff;
+	box-shadow: inset 1px 1px 0px 0px #ffffff;
+}
+
+.css_btn_class:hover {
+	background: -moz-linear-gradient(center top, #303030 25%, #6e6e6e 80%);
+	background: -ms-linear-gradient(top, #303030 25%, #6e6e6e 80%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#303030',
+		endColorstr='#6e6e6e');
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(25%, #303030),
+		color-stop(80%, #6e6e6e));
+	background-color: #303030;
+}
+
+}
+.css_btn_class:active {
+	position: relative;
+	top: 1px;
+}

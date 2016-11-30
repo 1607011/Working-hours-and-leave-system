@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>忘記密碼</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="resourses/css/_bootstrap.css">
+<link rel="stylesheet" type="text/css" href="resourses/css/interface.css">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<link rel=stylesheet type="text/css" href="resourses/css/alertify.core.css">
+<link rel=stylesheet type="text/css" href="resourses/css/alertify.default.css">
+<script src="resourses/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="resourses/js/alertify.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$("#send").on("click", function() {
+			if ($('#uid').val() == "" || $('#email').val() == "") {
+				alertify.error('員工編號和信箱不得為空！');
+				return false;
+			}
+			$('.bg').fadeIn(200);
+			$('.contentDiv').fadeIn(400);
+			$(this).attr("disabled", "true");
+			$.ajax({
+				url : "/IISI_Project/forgetpwd",
+				type : "post",
+				data : $("#form-forget").serialize(),
+			}).done(function(msg) {
+				if (msg == '已寄送密碼至您的信箱')
+					alertify.alert(msg, function(e) {
+						if (e) {
+							window.location.replace('login.html');
+						}
+					});
+				else {
+					alertify.error(msg);
+				}
+			}).fail(function() {
+				alertify.error("系統錯誤！請稍後在試");
+			}).complete(function() {
+				$('.bg').fadeOut(1000);
+	 			$('.contentDiv').fadeOut(1000);
+	 			$("#send").removeAttr("disabled");
+			});
+		});
+// 		$('.bg').click(function() {
+// 			$('.bg').fadeOut(800);
+// 			$('.content').fadeOut(800);
+// 		});
+	});
+</script>
+</head>
+<body>
+	<div class="bg"><img class="contentDiv" src="resourses/img/waiting.gif" /></div>
+	<div class="navbar navbar-default navbar-static-top">
+		<img src="resourses/img/login_header.jpg" height="208" id="logo">
+
+	</div>
+	<div id="theme">
+		<img src="resourses/img/login_bg.jpg" height="570">
+		<div id="log">
+			<form id="form-forget" class="form-signin" name="forget_form"
+				action="/IISI_Project/forgetpwd" method="post" onsubmit="return false;">
+				<h1 class="form-signin-heading">找回密碼</h1>
+				<div class="input-group">
+					<span class="input-group-addon"> <i class="glyphicon glyphicon-user">
+					</i>
+					</span> <input type="text" id='uid' class="form-control" name="userid" placeholder="Userid"
+						required="">
+				</div>
+				<div class="input-group">
+					<span class="input-group-addon"> <i
+						class="glyphicon glyphicon-envelope"> </i>
+					</span> <input type="text" id='email' class="form-control" name="email"
+						placeholder="E-mail address" required="">
+				</div>
+				<br>
+				<button id="send" class="btn btn-lg btn-warning btn-block" type="submit"
+					name="login">送出</button>
+			</form>
+
+		</div>
+	</div>
+	<footer class="white navbar-fixed-bottom">
+		<p>時達特股份有限公司 版權所有 Copyright © 2016 S.T.A.R.T All Rights Reserved .</p>
+	</footer>
+</body>
+</html>
+

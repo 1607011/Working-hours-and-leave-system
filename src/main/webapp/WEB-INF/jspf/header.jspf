@@ -1,0 +1,21 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../resourses/css/_bootstrap.css">
+<link rel=stylesheet type="text/css" href="../resourses/css/alertify.core.css">
+<link rel=stylesheet type="text/css" href="../resourses/css/alertify.default.css">
+<link rel="stylesheet" type="text/css" href="../resourses/css/default.css">
+<link rel="stylesheet" type="text/css" href="../resourses/css/bootstrap-year-calendar.min.css">
+<link rel="stylesheet" type="text/css" href="../resourses/css/tooltipster.css">
+<link rel="stylesheet" type="text/css" href="../resourses/css/tooltipster-punk.css">
+<link rel="stylesheet" type="text/css" href="../resourses/css/interface.css">
+<link rel=stylesheet type="text/css" href="../resourses/css/workTimeManager_css.css">
+<script type="text/javascript" src="../resourses/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../resourses/js/alertify.js"></script>
+<script type="text/javascript" src="../resourses/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../resourses/js/jquery.tooltipster.min.js"></script>
+<script type="text/javascript" src="../resourses/js/interface.js"></script>
+<script type="text/javascript" src="../resourses/js/my_javascript.js"></script>
+<script type="text/javascript" src="../resourses/js/bootstrap-year-calendar.min.js"></script>
+<script type="text/javascript" src="../resourses/js/calendar_setting.js"></script>
